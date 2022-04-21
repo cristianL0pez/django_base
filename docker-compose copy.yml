@@ -1,3 +1,4 @@
+#cambiar el nombre de esta archivo a docker-compose.yml
 version: '3.7'
 
 services:
@@ -6,9 +7,9 @@ services:
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=tuclavedb           #aqui las credenciales que quieras
+      - POSTGRES_USER=tuclaveuser       #aqui las credenciales que quieras
+      - POSTGRES_PASSWORD=tuclavepass   #aqui las credenciales que quieras 
   django_gunicorn:
     volumes:
       - static:/static
@@ -19,9 +20,9 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - POSTGRES_NAME=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_NAME=tuclavedb      #aqui las credenciales que quieras
+      - POSTGRES_USER=tuclaveuser    #aqui las credenciales que quieras
+      - POSTGRES_PASSWORD=tuclavedb  #aqui las credenciales que quieras
     depends_on:
       - db
   nginx:
