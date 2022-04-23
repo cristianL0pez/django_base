@@ -22,5 +22,4 @@ View networks:
 
 Bring services down:
 `docker-compose down`
-# portfolio
-# django_base
+
